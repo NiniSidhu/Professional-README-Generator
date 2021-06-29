@@ -14,8 +14,8 @@ cont prompUser = () => {
             type: 'input',
             name: 'projectTitle',
             message: 'Please enter the title of the project. *Required',
-            validate: titleInput => {
-            if (titleInput){
+            validate: checkTitleInput => {
+            if (checkTitleInput){
                 return true;
             }else{
                 console.log('Enter the project title to proceed!');
@@ -27,8 +27,8 @@ cont prompUser = () => {
             type: 'input',
             name: 'description',
             message: 'Please enter the description of the project. *Required',
-            validate: projectDesciption => {
-                if (projectDesciption){
+            validate: checkProjectDesciption => {
+                if (checkProjectDesciption){
                     return true;
                 }else{
                     console.log('Enter the description of the project to proceed!');
@@ -39,9 +39,65 @@ cont prompUser = () => {
         {
             //Table to Contents
             type: 'confirm',
-            name: 'tableOfContents',
+            name: 'confirmTableOfContents',
             message: 'Would you like to add a Table of Contents',
             default: true 
+        },
+        {
+            //Installation Instructions
+            type: 'input',
+            name: 'installationInstructions',
+            message: 'Please provide any installation instructions if any. *Required',
+            validate: checkInstallationIntructions =>{
+                if (checkInstallationIntructions){
+                    return true; 
+                }else{
+                    console.log('Enter instructions for your project. Input N/A if none.');
+                    return false; 
+                }
+            }
+        },
+        {
+            //Usage Information
+            type: 'input',
+            name: 'usageInformation',
+            message: 'Please enter any Usage Information. *Required',
+            validate: checkUsageInformation =>{
+                if (checkUsageInformation){
+                    return true;
+                }else{
+                    console.log('Enter Usage information for the project. Enter N/A if none.');
+                    return false; 
+                }
+            }
+        },
+        {
+            //Contribution Guidelines
+            type: 'input',
+            name: 'contibutionGuidelines',
+            message: 'Please enter any Contribution Guidelines. *Required',
+            validate: checkContributionGuidelines => {
+                if (checkContributionGuidelines){
+                    return true;
+                }else{
+                    console.log('Eneter Contribution Guidelines for the project. Enter N/A if none.');
+                    return false; 
+                }
+            }
+        },
+        {
+            //Test Instuctions
+            type: 'input',
+            name: 'testInstructions',
+            message: 'Please enter any Test Instructions. *Required', 
+            validate: checkTestInstructions => {
+                if (checkTestInstructions){
+                    return true; 
+                }else{
+                    console.log('Enter Test Instructions for the project. Enter N/A if none.');
+                    return false;
+                }
+            }
         },
         {
             
