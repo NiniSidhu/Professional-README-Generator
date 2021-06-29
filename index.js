@@ -43,6 +43,20 @@ const prompUser = () => {
             default: true 
         },
         {
+            //Credits
+            type: 'input',
+            name: 'credits',
+            message: 'Please enter any Credits. *Required',
+            validate: checkCredits => {
+                if (checkCredits){
+                    return true;
+                }else{
+                    console.log('Enter Contribution Guidelines for the project.');
+                    return false; 
+                }
+            }
+        },
+        {
             //Installation Instructions
             type: 'input',
             name: 'installationInstructions',
@@ -71,38 +85,17 @@ const prompUser = () => {
             }
         },
         {
-            //Contribution Guidelines
-            type: 'input',
-            name: 'contibutionGuidelines',
-            message: 'Please enter any Contribution Guidelines. *Required',
-            validate: checkContributionGuidelines => {
-                if (checkContributionGuidelines){
-                    return true;
-                }else{
-                    console.log('Eneter Contribution Guidelines for the project. Enter N/A if none.');
-                    return false; 
-                }
-            }
-        },
-        {
-            //Test Instuctions
-            type: 'input',
-            name: 'testInstructions',
-            message: 'Please enter any Test Instructions. *Required', 
-            validate: checkTestInstructions => {
-                if (checkTestInstructions){
-                    return true; 
-                }else{
-                    console.log('Enter Test Instructions for the project. Enter N/A if none.');
-                    return false;
-                }
-            }
+            //Confirmation to add License
+            type: 'confirm',
+            name: 'checkLicense',
+            message: 'Do you want to add a License?',
+            default: false
         },
         {
             //License 
             type: 'list',
             name: 'license',
-            message: 'Please select from the list of licenses you would like to include. *Required',
+            message: 'Please select from the list of licenses you would like to include.',
             choices: ['GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
             when: ({checkLicense}) => {
                 if (checkLicense){
@@ -133,8 +126,66 @@ const prompUser = () => {
             }
         },
         {
-
-        }
+            //Confirmation to add Features
+            type: 'confirm',
+            name: 'confirmFeature',
+            message: 'Do you want to add any Features?',
+            default: false
+        },
+        {
+            //When confirmed, add Features
+            type: 'input',
+            name: 'feature',
+            message: 'Please enter the Features you want to include!',
+            when: ({confirmFeature}) =>{
+                if (confirmFeature){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        },
+        {
+            //Confirmation to add Contribution Info
+            type: 'confirm',
+            name: 'confirmContribution',
+            message: 'Do you want to add any Contrubution Information',
+            default: false,
+        },
+        {
+            //When confirmed, add Contribution Information
+            type: 'input',
+            name: 'contribution',
+            message: 'Please enter the Contribution information you want to include!',
+            when: ({confirmContributing}) =>{
+                if (confirmContributing){
+                    return true;
+                }else{
+                    return false; 
+                }
+            }
+        },
+        {
+            //Confirmation to add Tests
+            type: 'confirm',
+            name: 'confirmTest',
+            message: 'Do you want to add any Contrubution Information',
+            default: false,
+        },
+        {
+            //When confirmed, add Tests 
+            type: 'input',
+            name: 'test',
+            message: 'Please enter the Test information you want to include!',
+            when: ({cofnrimTest}) =>{
+                if (confirmTest){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        },
+        
 
 
     ])
