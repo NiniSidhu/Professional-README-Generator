@@ -177,7 +177,7 @@ const prompUser = () => {
             type: 'input',
             name: 'test',
             message: 'Please enter the Test information you want to include!',
-            when: ({cofnrimTest}) =>{
+            when: ({confirmTest}) =>{
                 if (confirmTest){
                     return true;
                 }else{
@@ -185,8 +185,41 @@ const prompUser = () => {
                 }
             }
         },
-        
-
-
+        {
+            //GitHub Information
+            type: 'input',
+            name: 'github',
+            message: 'Please provide your GitHub user name. *Required',
+            validate: checkGithub => {
+                if (checkGithub){
+                    return true;
+                }else{
+                    console.log('Enter your GitHub username to proceed!');
+                    return false; 
+                }
+            }
+        },
+        {
+            //Email Address
+            type: 'input',
+            name: 'email',
+            message: 'Please enter your email address. *Required',
+            validate: checkEmail => {
+                if (checkEmail){
+                    return true; 
+                }else{
+                    console.log('Enter your email address to proceed!');
+                    return false; 
+                }
+            }
+        }
     ])
 };
+
+prompUser()
+    .then(answers => {
+        const userAnswers = generateFile(answers);
+
+        fs.watchFile
+    });
+});
