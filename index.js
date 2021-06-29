@@ -3,14 +3,13 @@ Author: Nayandeep Sidhu
 Date Created: June 28th, 2021
 Project Description: This project uses node and npn to generate a professional README generator. The program will ask the user for a series of questions that will allow the user to generate a README. Some questions will be mandatory to respond to while others may be skipped. */ 
 
-
 const inquirer = require('inquirer'); //To import inquirer onto our JS file
 const fs = require('fs'); //To create file types -> will be used to create README.md file
-const { DefaultSerializer } = require('v8');
 
-cont prompUser = () => {
+
+const prompUser = () => {
     return inquirer.prompt([
-        { //Project Title
+        {   //Project Title
             type: 'input',
             name: 'projectTitle',
             message: 'Please enter the title of the project. *Required',
@@ -100,7 +99,41 @@ cont prompUser = () => {
             }
         },
         {
-            
+            //License 
+            type: 'list',
+            name: 'license',
+            message: 'Please select from the list of licenses you would like to include. *Required',
+            choices: ['GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
+            when: ({checkLicense}) => {
+                if (checkLicense){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        },
+        {
+            //Confrimation to add Badges
+            type: 'confirm',
+            name: 'confrimBadge',
+            message: 'Do you want add any Badges?',
+            default: false
+        },
+        {
+            //When confirmed, add Badges
+            type: 'input',
+            name: 'badges',
+            message: 'Please enter the Badges you want to include!',
+            when: ({confirmBadge}) => {
+                if (confirmBadge){
+                    return true; 
+                }else{
+                    return false; 
+                }
+            }
+        },
+        {
+
         }
 
 
