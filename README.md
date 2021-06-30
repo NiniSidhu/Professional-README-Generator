@@ -9,3 +9,6 @@ This project allows the user to generate a README.md file by answering a series 
 ### User Interface Video
 https://drive.google.com/file/d/1DwozqOuqxGeP4t-H_ZY0xkoo3bG6gws8/view
 
+### Finished Product 
+![image](https://user-images.githubusercontent.com/79432326/123905047-96bbf700-d93f-11eb-9f92-93d3895019f5.png)
+
