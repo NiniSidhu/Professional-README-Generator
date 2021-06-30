@@ -14,11 +14,12 @@ const prompUser = () => {
             name: 'projectTitle',
             message: 'Please enter the title of the project. *Required',
             validate: checkTitleInput => {
-            if (checkTitleInput){
-                return true;
-            }else{
-                console.log('Enter the project title to proceed!');
-                return false;
+                if (checkTitleInput){
+                    return true;
+                }else{
+                    console.log('Enter the project title to proceed!');
+                    return false;
+                }
             }
         },
         {
