@@ -170,7 +170,7 @@ const prompUser = () => {
             //Confirmation to add Tests
             type: 'confirm',
             name: 'confirmTest',
-            message: 'Do you want to add any Contrubution Information',
+            message: 'Do you want to add any Test Information',
             default: false,
         },
         {

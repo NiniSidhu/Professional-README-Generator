@@ -1,15 +1,15 @@
 # Test Project
         
-![license](https://img.shields.io/badge/License-MIT-blue)
+![license](https://img.shields.io/badge/License-Mozilla_Public_2.0-blue)
 
-This is a test project. The purpose of this project is to see whether this works or not. 
+It is a test project. The purpose of this test is to see if this code works.
 
 # Table of Contents
     
-* [Installation](#installationInstructions)
-* [Usage](#usageInformation)
-* [Credits](#credits)
-* [UserPrompts](#promptUser)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Credits](#Credits)
+* [Questions?](#Questions)
 * [License](#license)
 
 * [Features](#feature)
@@ -17,25 +17,25 @@ This is a test project. The purpose of this project is to see whether this works
 
 
 # Installation
-Install node and npm
+Download node and install inquirer
 
 # Usage
-none
+None
 
 # Credits
 Nayandeep Sidhu
 
 # Questions
-[Reach Me](nayandeepsidhu@gmail.com)
+[Reach Me](nini@nini.com)
 [GitHub](https://github.com/ninisidhu)
 
 # License
-MIT License
+Mozilla Public License 2.0
     
     
 
 # Features
-It has the ability to generate README files
+It has the ability to help lazy people!
     
     
 
