@@ -1,26 +1,26 @@
-# Test Project 2
+# Test Project
         
 ![license](https://img.shields.io/badge/License-MIT-blue)
 
-It is another test
+This is a test project. The purpose of this project is to see whether this works or not. 
 
 # Table of Contents
     
-*[Installation](#installationInstructions)
-*[Usage](#usageInformation)
-*[Credits](#credits)
-*[UserPrompts](#promptUser)
+* [Installation](#installationInstructions)
+* [Usage](#usageInformation)
+* [Credits](#credits)
+* [UserPrompts](#promptUser)
 * [License](#license)
 
 * [Features](#feature)
 
-* [Test](#test)
+
 
 # Installation
-None
+Install node and npm
 
 # Usage
-Use at your own risk
+none
 
 # Credits
 Nayandeep Sidhu
@@ -35,14 +35,8 @@ MIT License
     
 
 # Features
-It can create README files
+It has the ability to generate README files
     
     
 
-<<<<<<< HEAD
-# Test
-node
-    
-=======
->>>>>>> 0647115a0d0e83396141307209145e32be1a7781
-    
+

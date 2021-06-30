@@ -80,10 +80,10 @@ const generateTableOfContents = tableOfContents => {
     }
     return `# Table of Contents
     
-*[Installation](#installationInstructions)
-*[Usage](#usageInformation)
-*[Credits](#credits)
-*[UserPrompts](#promptUser)`;
+* [Installation](#installationInstructions)
+* [Usage](#usageInformation)
+* [Credits](#credits)
+* [UserPrompts](#promptUser)`;
 };
 
 const tableOfContentsLicense = license => {
