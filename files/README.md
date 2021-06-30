@@ -1,8 +1,8 @@
 # Test Project
         
-![license](https://img.shields.io/badge/License-Mozilla_Public_2.0-blue)
+![license](https://img.shields.io/badge/License-MIT-blue)
 
-It is a test project. The purpose of this test is to see if this code works.
+This is a test project. The purpose of this test is to see whether this code works or not.
 
 # Table of Contents
     
@@ -17,25 +17,25 @@ It is a test project. The purpose of this test is to see if this code works.
 
 
 # Installation
-Download node and install inquirer
+Download node and npm 
 
 # Usage
-None
+none
 
 # Credits
 Nayandeep Sidhu
 
 # Questions
-[Reach Me](nini@nini.com)
+[Reach Me](nayandeepsidhu@gmail.com)
 [GitHub](https://github.com/ninisidhu)
 
 # License
-Mozilla Public License 2.0
+MIT License
     
     
 
 # Features
-It has the ability to help lazy people!
+It helps people create last minute README files
     
     
 
