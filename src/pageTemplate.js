@@ -6,20 +6,21 @@ const makeLicenseBadge = licenseName => {
     }
     //If the following are selected
     if (licenseName.includes('GNU')){
-        licenseName = 'GNU_General_Public_License_v3.0';
+        licenseName = 'GNU_General_Public_v3.0';
     }
     if (licenseName.includes('MIT')){
         licenseName = 'MIT';
     }
     if (licenseName.includes('Mozilla')){
-        licenseName = 'Mozilla_Public_License_2.0';
+        licenseName = 'Mozilla_Public_2.0';
     }
     if (licenseName.includes('Unlicense')){
         licenseName = 'The_Unlicense';
     }
     //returns the image of the License
     return `
-    ![license](https://img.shields.io/badge/License-${licenseName}-blue)`
+![license](https://img.shields.io/badge/License-${licenseName}-blue)`
+
 }
 // The text of the License
 const generateLicense = licenseText => {
@@ -27,7 +28,9 @@ const generateLicense = licenseText => {
         return '';
     }
     return `# License
-    ${licenseText}`;
+${licenseText}
+    
+    `;
 };
 
 //Badges
@@ -36,7 +39,9 @@ const generateBadges = badgesText => {
         return '';
     }
     return `# Badges
-    ${badgesText}`;
+${badgesText}
+    
+    `;
 };
 //Features
 const generateFeatures = featuresText => {
@@ -44,7 +49,9 @@ const generateFeatures = featuresText => {
         return '';
     }
     return `# Features
-    ${featuresText}`;
+${featuresText}
+    
+    `;
 };
 //Contribution 
 const generateContribution = contributionText => {
@@ -52,7 +59,9 @@ const generateContribution = contributionText => {
         return '';
     }
     return `# Contribution
-    ${contributionText}`;
+${contributionText}
+    
+    `;
 };
 //Tests
 const generateTest = testText => {
@@ -60,7 +69,9 @@ const generateTest = testText => {
         return '';
     }
     return `# Test
-    ${testText}`;
+${testText}
+    
+    `;
 };
 //Table of Contents 
 const generateTableOfContents = tableOfContents => {
@@ -69,10 +80,10 @@ const generateTableOfContents = tableOfContents => {
     }
     return `# Table of Contents
     
-    *[Installation](#installationInstructions)
-    *[Usage](#usageInformation)
-    *[Credits](#credits)
-    *[UserPrompts](#promptUser)`;
+*[Installation](#installationInstructions)
+*[Usage](#usageInformation)
+*[Credits](#credits)
+*[UserPrompts](#promptUser)`;
 };
 
 const tableOfContentsLicense = license => {
@@ -103,7 +114,7 @@ const tableOfContentsTest = test =>{
     if (!test){
         return '';
     }
-    return `* [Contribution](#test)`
+    return `* [Test](#test)`
 }
 module.exports = pageTemplate => {
     const{ projectTitle, description, credits, installationInstructions, usageInformation, github, email, ...notRequired} = pageTemplate;
@@ -113,33 +124,32 @@ module.exports = pageTemplate => {
     return `# ${projectTitle}
         ${makeLicenseBadge(notRequired.license)}
 
-    ${description}
+${description}
 
-    ${generateTableOfContents(notRequired.confirmTableOfContents)}
-    ${tableOfContentsLicense(notRequired.license)}
-    ${tableOfContentsBadges(notRequired.badges)}
-    ${tableOfContentsFeatures(notRequired.feature)}
-    ${tableOfContentsContribution(notRequired.contribution)}
-    ${tableOfContentsTest(notRequired.test)}
+${generateTableOfContents(notRequired.confirmTableOfContents)}
+${tableOfContentsLicense(notRequired.license)}
+${tableOfContentsBadges(notRequired.badges)}
+${tableOfContentsFeatures(notRequired.feature)}
+${tableOfContentsContribution(notRequired.contribution)}
+${tableOfContentsTest(notRequired.test)}
 
-    # Installation
-    ${installationInstructions}
+# Installation
+${installationInstructions}
 
-    # Usage
-    ${usageInformation}
+# Usage
+${usageInformation}
 
-    # Credits
-    ${credits}
+# Credits
+${credits}
 
-    # Questions
-    [Reach Me](${email})
-    [GitHub](https://github.com/${github})
+# Questions
+[Reach Me](${email})
+[GitHub](https://github.com/${github})
 
-    ${generateLicense(notRequired.license)}
-    ${generateBadges(notRequired.badges)}
-    ${generateFeatures(notRequired.feature)}
-    ${generateContribution(notRequired.contribution)}
-    ${generateTest(notRequired.test)}
-
-    `;
+${generateLicense(notRequired.license)}
+${generateBadges(notRequired.badges)}
+${generateFeatures(notRequired.feature)}
+${generateContribution(notRequired.contribution)}
+${generateTest(notRequired.test)}
+`;
 }
