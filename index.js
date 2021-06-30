@@ -5,7 +5,7 @@ Project Description: This project uses node and npn to generate a professional R
 
 const inquirer = require('inquirer'); //To import inquirer onto our JS file
 const fs = require('fs'); //To create file types -> will be used to create README.md file
-
+const pageTemplate = require('./src/pageTemplate'); //Fetching the function from pageTemplate.js
 
 const prompUser = () => {
     return inquirer.prompt([
@@ -96,7 +96,7 @@ const prompUser = () => {
             type: 'list',
             name: 'license',
             message: 'Please select from the list of licenses you would like to include.',
-            choices: ['GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
+            choices: ['GNU General Public License v3.0', 'MIT License', 'Mozilla Public License 2.0', 'The Unlicense'],
             when: ({checkLicense}) => {
                 if (checkLicense){
                     return true;
@@ -218,8 +218,11 @@ const prompUser = () => {
 
 prompUser()
     .then(answers => {
-        const userAnswers = generateFile(answers);
+        const userAnswers = pageTemplate(answers);
 
-        fs.watchFile
+        fs.writeFile('./files/README.md', userAnswers, err =>{
+            if(err) throw err;
+            console.log('Your README file has been generatred. Please check Files folder to see the generated file!');
+        });
+    
     });
-});
